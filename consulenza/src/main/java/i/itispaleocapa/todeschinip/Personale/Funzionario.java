@@ -11,7 +11,7 @@ public class Funzionario extends Personale{
         this.setOre(ore);
     }
     public int calcola(int ore){
-        if((new Date().getYear())-this.getAnnoAssunione()>10){ return ore*80;}
+        if((new Date().getYear())-this.getAnnoAssunione()>=10){ return ore*80;}
         return ore*70;
     }
 }

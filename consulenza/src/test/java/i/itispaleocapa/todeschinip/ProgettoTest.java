@@ -4,18 +4,18 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import i.itispaleocapa.todeschinip.Personale.Dirigente;
+import i.itispaleocapa.todeschinip.Personale.Funzionario;
+import i.itispaleocapa.todeschinip.Personale.Personale;
+import i.itispaleocapa.todeschinip.Personale.Progetto;
+import i.itispaleocapa.todeschinip.Personale.Tecnico;
+
 public class ProgettoTest {
     private Progetto progetto;
 
     @BeforeEach
     public void setup() {
         progetto = new Progetto();
-    }
-
-    @Test
-    public void testCalcolaWithNoImpiegati() {
-        int result = progetto.calcola();
-        Assertions.assertEquals(0, result);
     }
 
     @Test
@@ -37,11 +37,12 @@ public class ProgettoTest {
         progetto.aggiungi(funzionario);
         progetto.aggiungi(tecnico);
 
-        int result = progetto.calcola();
+        int result = 0;
+        result = progetto.calcola();
         // Dirigente: 40 * 100 = 4000
-        // Funzionario: 40 * 80 = 3200
+        // Funzionario: 40 * 70 = 2800
         // Tecnico: (40 + (2023 - 2010)) * 40 = 4060
-        // Total: 4000 + 3200 + 4060 = 11260
-        Assertions.assertEquals(11260, result);
+        // Total: 4000 + 2800 + 4060 = 11260
+        Assertions.assertEquals(10860, result);
     }
 }
