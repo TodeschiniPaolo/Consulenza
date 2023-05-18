@@ -1,21 +1,30 @@
 package i.itispaleocapa.todeschinip.Personale;
-
 import java.util.Date;
 
 public class Tecnico extends Personale{
-    private enum ruolo{Informatica_Telecomunicazioni,Elettronica_Automazione};
-    private enum internoEsterno{interno,esterno};
-    ruolo x;
-    internoEsterno y;
+    private enum Ruolo{Informatica_Telecomunicazioni,Elettronica_Automazione};
+    private enum InternoEsterno{interno,esterno};
+    Ruolo ruolo;
+    InternoEsterno internoEsterno;
+    public Tecnico(String codice, String cognome, String nome,int annoAssunzione,int ore,Ruolo ruolo,InternoEsterno internoEsterno){
+        this.setCodice(codice);
+        this.setCognome(cognome);
+        this.setNome(nome);
+        this.setAnnoAssunzione(annoAssunzione);
+        this.setOre(ore);
+        this.ruolo=ruolo;
+        this.internoEsterno=internoEsterno;
+    }
+    
     public int calcola(int ore){
-        switch (x){
+        switch (ruolo){
             case Informatica_Telecomunicazioni: 
-                switch (y){
+                switch (internoEsterno){
                     case interno: return (40+((new Date().getYear())-this.getAnnoAssunione()))*ore;
                     case esterno: return 40*ore;
                 }
             case Elettronica_Automazione:
-                switch (y){
+                switch (internoEsterno){
                     case interno: return (50+((new Date().getYear())-this.getAnnoAssunione()))*ore;
                     case esterno: return 50*ore;
                 }
