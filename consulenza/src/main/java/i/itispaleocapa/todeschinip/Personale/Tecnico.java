@@ -1,4 +1,5 @@
 package i.itispaleocapa.todeschinip.Personale;
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Tecnico extends Personale{
@@ -20,12 +21,12 @@ public class Tecnico extends Personale{
         switch (ruolo){
             case Informatica_Telecomunicazioni: 
                 switch (internoEsterno){
-                    case interno: return (40)*ore+((new Date().getYear())-this.getAnnoAssunione());
+                    case interno: return (40)*ore+(LocalDate.now().getYear()-this.getAnnoAssunione())*ore;
                     case esterno: return 40*ore;
                 }
             case Elettronica_Automazione:
                 switch (internoEsterno){
-                    case interno: return (50)*ore+((new Date().getYear())-this.getAnnoAssunione())*ore;
+                    case interno: return (50)*ore+(LocalDate.now().getYear()-this.getAnnoAssunione())*ore;
                     case esterno: return 50*ore;
                 }
             default: return ore; 

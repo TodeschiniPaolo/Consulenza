@@ -41,8 +41,8 @@ public class ProgettoTest {
         result = progetto.calcola();
         // Dirigente: 40 * 100 = 4000
         // Funzionario: 40 * 70 = 2800
-        // Tecnico: (40 + (2023 - 2010)) * 40 = 4060
-        // Total: 4000 + 2800 + 4060 = 11260
-        Assertions.assertEquals(10860, result);
+        // Tecnico: (40 + (2023 - 2010)) * 40 = 2120
+        // Total: 4000 + 2800 + 2120 = 11260
+        Assertions.assertEquals(8920, result);
     }
 }
